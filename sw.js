@@ -1,6 +1,6 @@
 /* Eenvoudige offline-cache voor Run Coach. Verhoog CACHE bij elke update. */
-const CACHE = "runcoach-danique-v1-m2-bugfix-schuifmelding-opslag-aftel-koppen-rec-smal-datum-wk-opslag3";
-const ASSETS = ["./","./index.html","./styles.css?v=1-m2-bugfix-schuifmelding-opslag-aftel-koppen-rec-smal-datum-wk-opslag3","./app.js?v=1-m2-bugfix-schuifmelding-opslag-aftel-koppen-rec-smal-datum-wk-opslag3","./coach.jpg","./coach-logo.png","./bartlopen-runcoach.png","./icon-192.png","./icon-512.png","./apple-touch-icon.png","./manifest.json"];
+const CACHE = "runcoach-danique-v1-m2-bugfix-schuifmelding-opslag-aftel-koppen-rec-smal-datum-wk-opslag3-kop";
+const ASSETS = ["./","./index.html","./styles.css?v=1-m2-bugfix-schuifmelding-opslag-aftel-koppen-rec-smal-datum-wk-opslag3-kop","./app.js?v=1-m2-bugfix-schuifmelding-opslag-aftel-koppen-rec-smal-datum-wk-opslag3-kop","./coach.jpg","./coach-logo.png","./bartlopen-runcoach.png","./icon-192.png","./icon-512.png","./apple-touch-icon.png","./manifest.json"];
 self.addEventListener("install", (e) => { e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ASSETS)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", (e) => { e.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener("fetch", (e) => {
